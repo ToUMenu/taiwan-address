@@ -8,5 +8,15 @@ module TaiwanAddress
     ]
 
     FIRST_DIGETS = BASE_CODES.map{|code| code / 100}
+
+    POSTAL_CODE_HASH = {
+      101 => "",
+      102 => "",
+      103 => "",
+    }
+
+    def all
+
+    end
   end
 end
