@@ -54,5 +54,9 @@ module TaiwanAddress
         "Hualien County"
       end
     end
+
+    def address
+      "#{self.zone} #{@division_string.gsub(/[\p{Han}]+/, "").gsub(/[\t]/, "")}"
+    end
   end
 end
