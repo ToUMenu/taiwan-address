@@ -1,5 +1,10 @@
 require "bundler/setup"
 require "taiwan_address"
+require 'pry'
+
+# For test coverage
+require 'coveralls'
+Coveralls.wear!
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
