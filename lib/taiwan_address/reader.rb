@@ -60,6 +60,10 @@ module TaiwanAddress
       end
     end
 
+    def district
+      return I18n.t("districts.#{PostalCode::POSTAL_CODE_HASH[@code]}") unless [300, 600].include?(@code)
+    end
+
     def address
       I18n.locale = @locale
 

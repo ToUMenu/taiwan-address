@@ -10,6 +10,10 @@ describe TaiwanAddress::Reader do
       expect(shenkeng.zone).to eq "Taipei City"
     end
 
+    it 'should return district' do
+      expect(shenkeng.district).to eq "Da An District"
+    end
+
     it 'should return address' do
       expect(shenkeng.address).to eq "Taipei City Da An District"
     end
@@ -32,6 +36,10 @@ describe TaiwanAddress::Reader do
 
     it 'should return zone' do
       expect(shenkeng.zone).to eq "New Taipei City"
+    end
+
+    it 'should return district' do
+      expect(shenkeng.district).to eq "Shenkeng District"
     end
 
     it 'should return address' do
@@ -58,6 +66,10 @@ describe TaiwanAddress::Reader do
       expect(shenkeng.zone).to eq "Keelung City"
     end
 
+    it 'should return district' do
+      expect(shenkeng.district).to eq "Zhongshan District"
+    end
+
     it 'should return address' do
       expect(shenkeng.address).to eq "Keelung City Zhongshan District"
     end
@@ -80,6 +92,10 @@ describe TaiwanAddress::Reader do
 
     it 'should return zone' do
       expect(shenkeng.zone).to eq "Lienchiang County"
+    end
+
+    it 'should return district' do
+      expect(shenkeng.district).to eq "Nangan Township"
     end
 
     it 'should return address' do
@@ -106,6 +122,10 @@ describe TaiwanAddress::Reader do
       expect(shenkeng.zone).to eq "Yilan County"
     end
 
+    it 'should return district' do
+      expect(shenkeng.district).to eq "Datong Township"
+    end
+
     it 'should return address' do
       expect(shenkeng.address).to eq "Yilan County Datong Township"
     end
@@ -128,6 +148,10 @@ describe TaiwanAddress::Reader do
 
     it 'should return zone' do
       expect(shenkeng.zone).to eq "Hsinchu City"
+    end
+
+    it 'should return district' do
+      expect(shenkeng.district).to eq nil
     end
 
     it 'should return address' do
