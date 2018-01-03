@@ -1,62 +1,75 @@
 module TaiwanAddress
   class Reader
-    def initialize(code)
+    def initialize(code, locale = :en)
       @code = code
       @division_string = PostalCode::POSTAL_CODE_HASH[@code]
+      @locale = locale
+      I18n.locale = locale
     end
 
     def zone
       code = @code
       case
       when code.between?(100, 116)
-        "Taipei City"
+        I18n.t('zone.taipei_city')
       when code.between?(200, 206)
-        "Keelung City"
+        I18n.t('zone.keelung_city')
       when code.between?(209, 212)
-        "Lienchiang County"
-      when code.between?(207, 253)
-        "New Taipei City"
+        I18n.t('zone.lienchiang_county')
+      when code.between?(207, 208)
+        I18n.t('zone.new_taipei_city')
+      when code.between?(220, 253)
+        I18n.t('zone.new_taipei_city')
       when code.between?(260, 290)
-        "Yilan County"
+        I18n.t('zone.yilan_county')
       when code == 300
-        "Hsinchu City"
+        I18n.t('zone.hsinchu_city')
       when code.between?(302, 315)
-        "Hsinchu County"
+        I18n.t('zone.hsinchu_county')
       when code.between?(320, 338)
-        "Taoyuan City"
+        I18n.t('zone.taoyuan_city')
       when code.between?(350, 369)
-        "Miaoli County"
+        I18n.t('zone.miaoli_county')
       when code.between?(400, 439)
-        "Taichung City"
+        I18n.t('zone.taichung_city')
       when code.between?(500, 530)
-        "Changhua County"
+        I18n.t('zone.changhua_county')
       when code.between?(540, 558)
-        "Nantou County"
+        I18n.t('zone.nantou_county')
       when code == 600
-        "Chiayi City"
+        I18n.t('zone.chiayi_city')
       when code.between?(602, 625)
-        "Chiayi County"
+        I18n.t('zone.chiayi_county')
       when code.between?(630, 655)
-        "Yunlin County"
+        I18n.t('zone.yunlin_county')
       when code.between?(700, 745)
-        "Tainan City"
+        I18n.t('zone.tainan_city')
       when code.between?(800, 852)
-        "Kaohsiung City"
+        I18n.t('zone.kaohsiung_city')
       when code.between?(880, 885)
-        "Penghu County"
+        I18n.t('zone.penghu_county')
       when code.between?(890, 896)
-        "Kinmen County"
+        I18n.t('zone.kinmen_county')
       when code.between?(900, 947)
-        "Pingtung County"
+        I18n.t('zone.pingtung_county')
       when code.between?(950, 966)
-        "Taitung County"
+        I18n.t('zone.taitung_county')
       when code.between?(970, 983)
-        "Hualien County"
+        I18n.t('zone.hualien_county')
       end
     end
 
     def address
       "#{self.zone} #{@division_string.gsub(/[\p{Han}]+/, "").gsub(/[\t]/, "")}"
+    end
+
+    private
+    def to_snake(text)
+      text.gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
+          .gsub(/([a-z\d])([A-Z])/, '\1_\2')
+          .tr("-", "_")
+          .tr(" ", "_")
+          .downcase
     end
   end
 end
