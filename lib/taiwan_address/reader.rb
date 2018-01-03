@@ -62,14 +62,5 @@ module TaiwanAddress
     def address
       "#{self.zone} #{@division_string.gsub(/[\p{Han}]+/, "").gsub(/[\t]/, "")}"
     end
-
-    private
-    def to_snake(text)
-      text.gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
-          .gsub(/([a-z\d])([A-Z])/, '\1_\2')
-          .tr("-", "_")
-          .tr(" ", "_")
-          .downcase
-    end
   end
 end
