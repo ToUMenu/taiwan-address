@@ -2,7 +2,6 @@ module TaiwanAddress
   class Reader
     def initialize(code, locale = :en)
       @code = code
-      @division_string = PostalCode::POSTAL_CODE_HASH[@code]
       @locale = locale
       I18n.locale = locale
     end
@@ -60,7 +59,8 @@ module TaiwanAddress
     end
 
     def address
-      "#{self.zone} #{@division_string.gsub(/[\p{Han}]+/, "").gsub(/[\t]/, "")}"
+      district = I18n.t("districts.#{PostalCode::POSTAL_CODE_HASH[@code]}")
+      "#{self.zone} #{district}"
     end
   end
 end
