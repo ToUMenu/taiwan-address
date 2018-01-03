@@ -146,6 +146,21 @@ describe TaiwanAddress::Reader do
       instance.locale = :"zh-TW"
       expect(instance.address).to eq "連江縣 南竿鄉"
     end
+
+    it 'should return zone with ja' do
+      instance.locale = :ja
+      expect(instance.zone).to eq "連江県"
+    end
+
+    it 'should return district with ja' do
+      instance.locale = :ja
+      expect(instance.district).to eq "南竿郷"
+    end
+
+    it 'should return address with ja' do
+      instance.locale = :ja
+      expect(instance.address).to eq "連江県 南竿郷"
+    end
   end
 
   describe 'Code 267' do
