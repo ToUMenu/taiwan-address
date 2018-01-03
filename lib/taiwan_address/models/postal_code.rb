@@ -8,7 +8,7 @@ module TaiwanAddress
       103 => "Datong_district	大同區",
       104 => "Zhongshan_district	中山區",
       105 => "Songshan_district	松山區",
-      106 => "Da'an_district	大安區",
+      106 => "Da_an_district	大安區",
       108 => "Wanhua_district	萬華區",
       110 => "Xinyi_district	信義區",
       111 => "Shilin_district	士林區",
@@ -18,7 +18,7 @@ module TaiwanAddress
       116 => "Wenshan_district	文山區",
       # 2 – Keelung, New Taipei, Matsu, Yilan
       # Keelung_city
-      200 => "Ren'ai_district	仁愛區",
+      200 => "Ren_ai_district	仁愛區",
       201 => "Xinyi_district	信義區",
       202 => "Zhongzheng_district	中正區",
       203 => "Zhongshan_district	中山區",
@@ -71,8 +71,8 @@ module TaiwanAddress
       267 => "Datong_township	大同鄉",
       268 => "Wujie_township	五結鄉",
       269 => "Dongshan_township	冬山鄉",
-      270 => "Su'ao_township	蘇澳鎮",
-      272 => "Nan'ao_township	南澳鄉",
+      270 => "Su_ao_township	蘇澳鎮",
+      272 => "Nan_ao_township	南澳鄉",
 
       # 3 – Hsinchu, Miaoli, Taoyuan
       # Hsinchu_city
@@ -121,7 +121,7 @@ module TaiwanAddress
       362 => "Touwu_township	頭屋鄉",
       363 => "Gongguan_township	公館鄉",
       364 => "Dahu_township	大湖鄉",
-      365 => "Tai'an_township	泰安鄉",
+      365 => "Tai_an_township	泰安鄉",
       366 => "Tongluo_township	銅鑼鄉",
       367 => "Sanyi_township	三義鄉",
       368 => "Xihu_township	西湖鄉",
@@ -156,7 +156,7 @@ module TaiwanAddress
       436 => "Qingshui_district	清水區",
       437 => "Dajia_district	大甲區",
       438 => "Waipu_district	外埔區",
-      439 => "Da'an_district	大安區",
+      439 => "Da_an_district	大安區",
 
       # 5 – Changhua, Nantou
       # Changhua County
@@ -192,7 +192,7 @@ module TaiwanAddress
       542 => "Caotun_township	草屯鎮",
       544 => "Guoxing_township	國姓鄉",
       545 => "Puli_township	埔里鎮",
-      546 => "Ren'ai_township	仁愛鄉",
+      546 => "Ren_ai_township	仁愛鄉",
       551 => "Mingjian_township	名間鄉",
       552 => "Jiji_township	集集鎮",
       553 => "Shuili_township	水里鄉",
@@ -310,7 +310,7 @@ module TaiwanAddress
       825 => "Qiaotou_district	橋頭區",
       826 => "Ziguan_district	梓官區",
       827 => "Mituo_district	彌陀區",
-      828 => "Yong'an_district	永安區",
+      828 => "Yong_an_district	永安區",
       829 => "Hunei_district	湖內區",
       830 => "Fengshan_district	鳳山區",
       831 => "Daliao_district	大寮區",
@@ -330,7 +330,7 @@ module TaiwanAddress
       # Penghu County
       880 => "Magong_city	馬公市",
       881 => "Xiyu_township	西嶼鄉",
-      882 => "Wang'an_township	望安鄉",
+      882 => "Wang_an_township	望安鄉",
       883 => "Qimei_township	七美鄉",
       884 => "Baisha_township	白沙鄉",
       885 => "Huxi_township	湖西鄉",
@@ -398,7 +398,7 @@ module TaiwanAddress
       970 => "Hualien_city	花蓮市",
       971 => "Xincheng_township	新城鄉",
       972 => "Xiulin_township	秀林鄉",
-      973 => "Ji'an_township	吉安鄉",
+      973 => "Ji_an_township	吉安鄉",
       974 => "Shoufeng_township	壽豐鄉",
       975 => "Fenglin_township	鳳林鎮",
       976 => "Guangfu_township	光復鄉",
