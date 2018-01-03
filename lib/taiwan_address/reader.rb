@@ -1,12 +1,14 @@
 module TaiwanAddress
   class Reader
+    attr_accessor :locale
+
     def initialize(code, locale = :en)
       @code = code
       @locale = locale
-      I18n.locale = locale
     end
 
     def zone
+      I18n.locale = @locale
       code = @code
       case
       when code.between?(100, 116)
@@ -59,6 +61,7 @@ module TaiwanAddress
     end
 
     def address
+      I18n.locale = @locale
       district = I18n.t("districts.#{PostalCode::POSTAL_CODE_HASH[@code]}")
       "#{self.zone} #{district}"
     end

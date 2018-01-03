@@ -14,16 +14,14 @@ describe TaiwanAddress::Reader do
       expect(shenkeng.address).to eq "New Taipei City Shenkeng District"
     end
 
-    let(:shenkeng_tw) do
-      described_class.new(222, :"zh-TW")
-    end
-
     it 'should return zone with Traditional Chinese' do
-      expect(shenkeng_tw.zone).to eq "新北市"
+      shenkeng.locale = :"zh-TW"
+      expect(shenkeng.zone).to eq "新北市"
     end
 
     it 'should return address with Traditional Chinese' do
-      expect(shenkeng_tw.address).to eq "新北市 Shenkeng District"
+      shenkeng.locale = :"zh-TW"
+      expect(shenkeng.address).to eq "新北市 深坑區"
     end
   end
 end
