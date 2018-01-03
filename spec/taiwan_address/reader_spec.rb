@@ -56,6 +56,11 @@ describe TaiwanAddress::Reader do
       expect(instance.zone).to eq "新北市"
     end
 
+    it 'should return district with zh-TW' do
+      instance.locale = :"zh-TW"
+      expect(instance.district).to eq "深坑區"
+    end
+
     it 'should return address with zh-TW' do
       instance.locale = :"zh-TW"
       expect(instance.address).to eq "新北市 深坑區"
@@ -82,6 +87,11 @@ describe TaiwanAddress::Reader do
     it 'should return zone with zh-TW' do
       instance.locale = :"zh-TW"
       expect(instance.zone).to eq "基隆市"
+    end
+
+    it 'should return district with zh-TW' do
+      instance.locale = :"zh-TW"
+      expect(instance.district).to eq "中山區"
     end
 
     it 'should return address with zh-TW' do
@@ -112,6 +122,11 @@ describe TaiwanAddress::Reader do
       expect(instance.zone).to eq "連江縣"
     end
 
+    it 'should return district with zh-TW' do
+      instance.locale = :"zh-TW"
+      expect(instance.district).to eq "南竿鄉"
+    end
+
     it 'should return address with zh-TW' do
       instance.locale = :"zh-TW"
       expect(instance.address).to eq "連江縣 南竿鄉"
@@ -140,6 +155,11 @@ describe TaiwanAddress::Reader do
       expect(instance.zone).to eq "宜蘭縣"
     end
 
+    it 'should return district with zh-TW' do
+      instance.locale = :"zh-TW"
+      expect(instance.district).to eq "大同鄉"
+    end
+
     it 'should return address with zh-TW' do
       instance.locale = :"zh-TW"
       expect(instance.address).to eq "宜蘭縣 大同鄉"
@@ -166,6 +186,11 @@ describe TaiwanAddress::Reader do
     it 'should return zone with zh-TW' do
       instance.locale = :"zh-TW"
       expect(instance.zone).to eq "新竹市"
+    end
+
+    it 'should return district with zh-TW' do
+      instance.locale = :"zh-TW"
+      expect(instance.district).to eq nil
     end
 
     it 'should return address with zh-TW' do
