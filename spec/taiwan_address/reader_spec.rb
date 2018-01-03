@@ -660,4 +660,71 @@ describe TaiwanAddress::Reader do
       expect(instance.address).to eq "屏東縣 萬丹鄉"
     end
   end
+
+  describe 'Code 952' do
+    let(:instance) do
+      described_class.new(952, :en)
+    end
+
+    it 'should return zone' do
+      expect(instance.zone).to eq "Taitung County"
+    end
+
+    it 'should return district' do
+      expect(instance.district).to eq "Lanyu Township"
+    end
+
+    it 'should return address' do
+      expect(instance.address).to eq "Taitung County Lanyu Township"
+    end
+
+    it 'should return zone with zh-TW' do
+      instance.locale = :"zh-TW"
+      expect(instance.zone).to eq "台東縣"
+    end
+
+    it 'should return district with zh-TW' do
+      instance.locale = :"zh-TW"
+      expect(instance.district).to eq "蘭嶼鄉"
+    end
+
+    it 'should return address with zh-TW' do
+      instance.locale = :"zh-TW"
+      expect(instance.address).to eq "台東縣 蘭嶼鄉"
+    end
+  end
+
+
+  describe 'Code 971' do
+    let(:instance) do
+      described_class.new(971, :en)
+    end
+
+    it 'should return zone' do
+      expect(instance.zone).to eq "Hualien County"
+    end
+
+    it 'should return district' do
+      expect(instance.district).to eq "Xincheng Township"
+    end
+
+    it 'should return address' do
+      expect(instance.address).to eq "Hualien County Xincheng Township"
+    end
+
+    it 'should return zone with zh-TW' do
+      instance.locale = :"zh-TW"
+      expect(instance.zone).to eq "花蓮縣"
+    end
+
+    it 'should return district with zh-TW' do
+      instance.locale = :"zh-TW"
+      expect(instance.district).to eq "新城鄉"
+    end
+
+    it 'should return address with zh-TW' do
+      instance.locale = :"zh-TW"
+      expect(instance.address).to eq "花蓮縣 新城鄉"
+    end
+  end
 end
