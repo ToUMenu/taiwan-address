@@ -757,4 +757,95 @@ describe TaiwanAddress::Reader do
       expect(instance.address).to eq "花蓮縣 新城鄉"
     end
   end
+
+  describe 'Code attr_accessor' do
+    let(:instance) do
+      described_class.new(971, :ja)
+    end
+
+    it 'should return address with code 913 and ja' do
+      instance.code = 913
+      expect(instance.address).to eq "屏東県 万丹郷"
+    end
+  end
+
+  describe 'Flaggers' do
+    describe 'code 913 should return with flaggers' do
+      let(:instance) do
+        described_class.new(913, :ja)
+      end
+
+      it 'should return is_city?' do
+        expect(instance.is_city?).to eq false
+      end
+
+      it 'should return is_county?' do
+        expect(instance.is_county?).to eq true
+      end
+
+      it 'should return is_township?' do
+        expect(instance.is_township?).to eq true
+      end
+
+      it 'should return is_district?' do
+        expect(instance.is_district?).to eq false
+      end
+
+      it 'should return is_islands?' do
+        expect(instance.is_islands?).to eq false
+      end
+    end
+
+    describe 'code 815 should return with flaggers' do
+      let(:instance) do
+        described_class.new(815, :"zh-TW")
+      end
+
+      it 'should return is_city?' do
+        expect(instance.is_city?).to eq true
+      end
+
+      it 'should return is_county?' do
+        expect(instance.is_county?).to eq false
+      end
+
+      it 'should return is_township?' do
+        expect(instance.is_township?).to eq false
+      end
+
+      it 'should return is_district?' do
+        expect(instance.is_district?).to eq true
+      end
+
+      it 'should return is_islands?' do
+        expect(instance.is_islands?).to eq false
+      end
+    end
+
+    describe 'code 819 should return with flaggers' do
+      let(:instance) do
+        described_class.new(819, :en)
+      end
+
+      it 'should return is_city?' do
+        expect(instance.is_city?).to eq true
+      end
+
+      it 'should return is_county?' do
+        expect(instance.is_county?).to eq false
+      end
+
+      it 'should return is_township?' do
+        expect(instance.is_township?).to eq false
+      end
+
+      it 'should return is_district?' do
+        expect(instance.is_district?).to eq false
+      end
+
+      it 'should return is_islands?' do
+        expect(instance.is_islands?).to eq true
+      end
+    end
+  end
 end

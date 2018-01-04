@@ -22,15 +22,24 @@ $ gem install taiwan_address
 ### Reader
 
 ```ruby
-reader = TaiwanAddress::Reader.new(203, :"zh-TW")
-reader.zone # => "基隆市"
-reader.district # => "中山區"
-reader.address # => "基隆市 中山區"
+address = TaiwanAddress::Reader.new(203, :"zh-TW")
+address.zone # => "基隆市"
+address.district # => "中山區"
+address.address # => "基隆市 中山區"
 
-reader.locale = :en
-reader.zone # => "Keelung City"
-reader.district # => "Zhongshan District"
-reader.address # => "Keelung City Zhongshan District"
+address.locale = :en
+address.zone # => "Keelung City"
+address.district # => "Zhongshan District"
+address.address # => "Keelung City Zhongshan District"
+
+address.code = 815
+address.address # => "Kaohsiung City Dashe District"
+address.is_city? # => true
+address.is_county? # => false
+
+address.is_district? # => true
+address.is_township? # => false
+address.is_islands? # => false
 ```
 
 ## Development
