@@ -770,30 +770,82 @@ describe TaiwanAddress::Reader do
   end
 
   describe 'Flaggers' do
-    let(:instance) do
-      described_class.new(913, :ja)
+    describe 'code 913 should return with flaggers' do
+      let(:instance) do
+        described_class.new(913, :ja)
+      end
+
+      it 'should return is_city?' do
+        expect(instance.is_city?).to eq false
+      end
+
+      it 'should return is_county?' do
+        expect(instance.is_county?).to eq true
+      end
+
+      it 'should return is_township?' do
+        expect(instance.is_township?).to eq true
+      end
+
+      it 'should return is_district?' do
+        expect(instance.is_district?).to eq false
+      end
+
+      it 'should return is_islands?' do
+        expect(instance.is_islands?).to eq false
+      end
     end
 
-    it 'code 913 should return is_township? is_district? is_islands?' do
-      expect(instance.is_township?).to eq true
-      expect(instance.is_district?).to eq false
-      expect(instance.is_islands?).to eq false
+    describe 'code 815 should return with flaggers' do
+      let(:instance) do
+        described_class.new(815, :"zh-TW")
+      end
+
+      it 'should return is_city?' do
+        expect(instance.is_city?).to eq true
+      end
+
+      it 'should return is_county?' do
+        expect(instance.is_county?).to eq false
+      end
+
+      it 'should return is_township?' do
+        expect(instance.is_township?).to eq false
+      end
+
+      it 'should return is_district?' do
+        expect(instance.is_district?).to eq true
+      end
+
+      it 'should return is_islands?' do
+        expect(instance.is_islands?).to eq false
+      end
     end
 
-    it 'code 815 should return is_township? is_district? is_islands?' do
-      instance.code = 815
-      instance.locale = :"zh-TW"
-      expect(instance.is_township?).to eq false
-      expect(instance.is_district?).to eq true
-      expect(instance.is_islands?).to eq false
-    end
+    describe 'code 819 should return with flaggers' do
+      let(:instance) do
+        described_class.new(819, :en)
+      end
 
-    it 'code 819 should return is_township? is_district? is_islands?' do
-      instance.code = 819
-      instance.locale = :en
-      expect(instance.is_township?).to eq false
-      expect(instance.is_district?).to eq false
-      expect(instance.is_islands?).to eq true
+      it 'should return is_city?' do
+        expect(instance.is_city?).to eq true
+      end
+
+      it 'should return is_county?' do
+        expect(instance.is_county?).to eq false
+      end
+
+      it 'should return is_township?' do
+        expect(instance.is_township?).to eq false
+      end
+
+      it 'should return is_district?' do
+        expect(instance.is_district?).to eq false
+      end
+
+      it 'should return is_islands?' do
+        expect(instance.is_islands?).to eq true
+      end
     end
   end
 end
