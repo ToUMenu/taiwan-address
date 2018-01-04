@@ -1,6 +1,6 @@
 module TaiwanAddress
   class Reader
-    attr_accessor :locale
+    attr_accessor :locale, :code
 
     def initialize(code, locale = :en)
       @code = code
