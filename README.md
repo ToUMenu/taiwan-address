@@ -1,5 +1,6 @@
 # TaiwanAddress
 
+[![Gem Version](https://badge.fury.io/rb/taiwan_address.svg)](https://badge.fury.io/rb/taiwan_address)
 [![Build Status](https://travis-ci.org/ToUMenu/taiwan-address.svg?branch=master)](https://travis-ci.org/ToUMenu/taiwan-address)
 [![Coverage Status](https://coveralls.io/repos/github/ToUMenu/taiwan-address/badge.svg?branch=master)](https://coveralls.io/github/ToUMenu/taiwan-address?branch=master)
 
