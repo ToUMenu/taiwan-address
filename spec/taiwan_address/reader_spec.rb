@@ -768,4 +768,32 @@ describe TaiwanAddress::Reader do
       expect(instance.address).to eq "屏東県 万丹郷"
     end
   end
+
+  describe 'Flaggers' do
+    let(:instance) do
+      described_class.new(913, :ja)
+    end
+
+    it 'code 913 should return is_township? is_district? is_islands?' do
+      expect(instance.is_township?).to eq true
+      expect(instance.is_district?).to eq false
+      expect(instance.is_islands?).to eq false
+    end
+
+    it 'code 815 should return is_township? is_district? is_islands?' do
+      instance.code = 815
+      instance.locale = :"zh-TW"
+      expect(instance.is_township?).to eq false
+      expect(instance.is_district?).to eq true
+      expect(instance.is_islands?).to eq false
+    end
+
+    it 'code 819 should return is_township? is_district? is_islands?' do
+      instance.code = 819
+      instance.locale = :en
+      expect(instance.is_township?).to eq false
+      expect(instance.is_district?).to eq false
+      expect(instance.is_islands?).to eq true
+    end
+  end
 end

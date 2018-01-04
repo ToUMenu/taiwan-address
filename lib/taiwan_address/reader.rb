@@ -72,5 +72,27 @@ module TaiwanAddress
         return "#{self.zone} #{district}"
       end
     end
+
+    # Flaggers
+    def is_district?
+      return false if [300, 600].include?(@code)
+
+      district = I18n.t("districts.#{PostalCode::POSTAL_CODE_HASH[@code]}", locale: :en)
+      return district.end_with?("District")
+    end
+
+    def is_township?
+      return false if [300, 600].include?(@code)
+
+      district = I18n.t("districts.#{PostalCode::POSTAL_CODE_HASH[@code]}", locale: :en)
+      return district.end_with?("Township")
+    end
+
+    def is_islands?
+      return false if [300, 600].include?(@code)
+
+      district = I18n.t("districts.#{PostalCode::POSTAL_CODE_HASH[@code]}", locale: :en)
+      return district.end_with?("Islands")
+    end
   end
 end
