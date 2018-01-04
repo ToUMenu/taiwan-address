@@ -757,4 +757,15 @@ describe TaiwanAddress::Reader do
       expect(instance.address).to eq "花蓮縣 新城鄉"
     end
   end
+
+  describe 'Code attr_accessor' do
+    let(:instance) do
+      described_class.new(971, :ja)
+    end
+
+    it 'should return address with code 913 and ja' do
+      instance.code = 913
+      expect(instance.address).to eq "屏東県 万丹郷"
+    end
+  end
 end
