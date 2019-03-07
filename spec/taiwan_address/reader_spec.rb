@@ -34,6 +34,7 @@ describe TaiwanAddress::Reader do
     it 'should return address with zh-TW' do
       instance.locale = :"zh-TW"
       expect(instance.address).to eq "台北市 大安區"
+      expect(instance.address(delimiter="")).to eq "台北市大安區"
     end
 
     it 'should return zone with ja' do
@@ -49,6 +50,7 @@ describe TaiwanAddress::Reader do
     it 'should return address with ja' do
       instance.locale = :ja
       expect(instance.address).to eq "台北市 大安区"
+      expect(instance.address(delimiter="")).to eq "台北市大安区"
     end
   end
 
