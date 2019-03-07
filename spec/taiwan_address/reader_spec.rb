@@ -16,6 +16,9 @@ describe TaiwanAddress::Reader do
 
     it 'should return address' do
       expect(instance.address).to eq "Taipei City Da An District"
+      expect(instance.address(delimiter=",")).to eq "Taipei City, Da An District"
+      expect(instance.address(delimiter=" ", order_reverse=true)).to eq "Da An District Taipei City"
+      expect(instance.address(delimiter=",", order_reverse=true)).to eq "Da An District, Taipei City"
     end
 
     it 'should return zone with zh-TW' do

@@ -65,12 +65,16 @@ module TaiwanAddress
       return I18n.t("districts.#{PostalCode::POSTAL_CODE_HASH[@code]}", locale: @locale) unless [300, 600].include?(@code)
     end
 
-    def address
+    def address(delimiter=" ", order_reverse=false)
       if [300, 600].include?(@code)
         return self.zone
       else
         district = I18n.t("districts.#{PostalCode::POSTAL_CODE_HASH[@code]}", locale: @locale)
-        return "#{self.zone} #{district}"
+
+        if order_reverse
+          return "#{district}#{resolve_delimiter(delimiter)}#{self.zone}"
+        end
+        return "#{self.zone}#{resolve_delimiter(delimiter)}#{district}"
       end
     end
 
@@ -102,6 +106,14 @@ module TaiwanAddress
 
       district = I18n.t("districts.#{PostalCode::POSTAL_CODE_HASH[@code]}", locale: :en)
       return district.end_with?("Islands")
+    end
+
+    private
+    def resolve_delimiter(delimiter)
+      if delimiter == ","
+        return ", "
+      end
+      return delimiter
     end
   end
 end
